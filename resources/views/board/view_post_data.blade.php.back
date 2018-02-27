@@ -1,0 +1,17 @@
+
+  <table border="1" width="800" height="300">
+    <tr height="40"><td width="400" >{{$post_data->name}}</td><td>{{$post_data->updated_at}}</td></tr>
+    <tr height="40"><td colspan="2">{{$post_data->title}}</td></tr>
+    <tr>
+      <td colspan="3" style="height: 200px; position: relative;">
+        {{$post_data->content}}
+        <form action"/add_reply_data" method="get">
+        {{csrf_field()}}
+        <input type="hidden" name="post_id" value="{{$post_data->id}}">
+        <input type="submit" value="返信" style="width:60px; height:40px; position: absolute; right: 0px; bottom: 0px;" />
+        </form>
+      </td>
+    </tr>
+  </table>
+  <br>
+
