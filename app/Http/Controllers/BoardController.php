@@ -16,7 +16,7 @@ class BoardController extends Controller
         return view('board.add_post_data');
     }
     public function create_post_data(Request $request){
-        //$this->vaildate(Post_data::$rules);
+        $this->validate($request,Post_data::$rules);
         $post_data = new Post_data ;
         $form = $request->all();
         unset($form['_token']);
@@ -35,6 +35,7 @@ class BoardController extends Controller
         return view('board.add_reply_data',$param);
     }
     public function create_reply_data(Request $request){
+        $this->validate($request,Reply_data::$rules);
         $reply_data = new Reply_data;
         $form = $request->all();
         unset($form['_token']);

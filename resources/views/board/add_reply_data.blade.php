@@ -10,11 +10,20 @@
   
   <form action="/add_reply_data" method="post" id="form_id">
     {{csrf_field()}}
+    @if (count($errors)>0)
+      <p><font color="red">入力に問題があります。再入力してください</font></p>
+    @endif
     <p>返信フォーム</p>
     <p>名前</p>
-    <input type="text" name="name" id="reply-name-text" size=60>
+    @if ($errors->has('name'))
+      <p><font color="red">{{$errors->first('name')}}</font></p>
+    @endif
+    <input type="text" name="name" id="reply-name-text" size=60 value="{{old('name')}}">
     <p>内容</p>
-    <textarea name="content" cols="60" rows="5" id="reply-content-text" ></textarea>
+    @if ($errors->has('content'))
+      <p><font color="red">{{$errors->first('content')}}</font></p>
+    @endif
+    <textarea name="content" cols="60" rows="5" id="reply-content-text" >{{old('content')}}</textarea>
     <div style="text-align:right">
       <button type="button" id="sampleButton" class="btn btn-primary btn-lg" style="position: relative; right: 0px; top: 0px">
         投稿

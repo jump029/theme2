@@ -1,13 +1,25 @@
 @extends('layouts.layout')
 @section('content')
   <form action="/add_post_data" method="post" id="form_id">
+    @if (count($errors)>0)
+      <p><font color="red">入力に問題があります。再入力してください</font></p>
+    @endif
     {{csrf_field()}}
     <p>名前</p>
-    <input type="text" name="name" id="name-text" size=60>
+    @if ($errors->has('name'))
+      <p><font color="red">{{$errors->first('name')}}</font></p>
+    @endif
+    <input type="text" name="name" id="name-text" size=60 value="{{old('name')}}">
     <p>タイトル</p>
-    <input type="text" name="title" id="title-text" size=60>
+    @if ($errors->has('title'))
+      <p><font color="red">{{$errors->first('title')}}</font></p>
+    @endif
+    <input type="text" name="title" id="title-text" size=60 value="{{old('title')}}">
     <p>内容</p>
-    <textarea name="content" cols="60" rows="5" id="content-text" ></textarea>
+    @if ($errors->has('content'))
+      <p><font color="red">{{$errors->first('content')}}</font></p>
+    @endif
+    <textarea name="content" cols="60" rows="5" id="content-text">{{old('content')}}</textarea>
     <div style='text-align:right;'>
       <br>
       <button type="button" id="sampleButton" class="btn btn-primary btn-lg">

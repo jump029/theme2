@@ -9,9 +9,11 @@ class Post_data extends Model
     protected $guarded = array('id');
     //protected $primaryKey = "post_id";
 
-    /*public static $rules = array(
-        'name' => required;
-    );*/
+    public static $rules = array(
+        'name' => 'required',
+        'title' => 'required',
+        'content' => 'required'
+    );
    public function Reply_data()
    {
        return $this->hasMany('App\Reply_data','post_id','id');
