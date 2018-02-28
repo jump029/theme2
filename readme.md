@@ -1,3 +1,34 @@
+# theme2 web掲示板
+
+## 実行環境
+PHP 5.6.33  
+Laravel 5.4.36  
+MySQL 5.7.20  
+
+## setup
+    $ git clone git@github.com:jump029/theme2.git
+    $ cd theme2
+    $ composer update
+    $ composer install
+    $ mysql -p -u "user"
+    $ mysql> create database theme2;
+    $ cp .env.example .env
+    $ vi .env
+    $ vi config/database.php
+    $ php artisan key:generate
+    $ php artisan migrate
+
+編集コマンド２つで環境に合わせてdatabaseを設定する。
+
+
+## 実行結果
+トップページ
+
+新規投稿画面
+
+コメント返信画面
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
