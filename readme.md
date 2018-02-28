@@ -22,13 +22,22 @@ MySQL 5.7.20
 
 
 ## 実行結果
-トップページ
-
-新規投稿画面
-
-コメント返信画面
+トップページ  
+新規投稿画面へのボタンは一番上に表示するようにしてあります。  
+![トップページ](png/toppage.PNG)  
 
 
+新規投稿画面  
+![新規投稿画面1](png/新規投稿画面1.PNG)  
+![新規投稿画面2](png/新規投稿画面2.PNG)  
+
+
+コメント返信画面  
+![返信画面1](png/返信画面.PNG)  
+![返信画面2](png/返信画面modal.PNG)  
+
+
+## 以下はLaravel defalutのもの
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
